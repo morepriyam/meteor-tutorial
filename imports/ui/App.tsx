@@ -7,6 +7,7 @@ import { useTracker, useSubscribe } from "meteor/react-meteor-data";
 import { TaskForm } from "./TaskForm";
 import { Meteor } from "meteor/meteor";
 import { LoginForm } from "./LoginForm";
+import { CameraView } from "./CameraView";
 
 export const App = () => {
   const user = useTracker(() => Meteor.user());
@@ -58,7 +59,7 @@ export const App = () => {
           <header>
             <div className="app-bar">
               <div className="app-header">
-                <h1>📝️ To Do List</h1>
+                <h1>📝️ MIE Shorts</h1>
                 <h2>
                   {pendingTasksCount
                     ? `You have ${pendingTasksTitle} pending tasks`
@@ -72,6 +73,8 @@ export const App = () => {
               <div className="user" onClick={logout}>
                 {user.username} 🚪
               </div>
+
+              <CameraView />
 
               <TaskForm />
 
