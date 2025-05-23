@@ -7,6 +7,7 @@ import { useTracker, useSubscribe } from "meteor/react-meteor-data";
 import { TaskForm } from "./TaskForm";
 import { Meteor } from "meteor/meteor";
 import { LoginForm } from "./LoginForm";
+import { CameraView } from "./CameraView";
 
 export const App = () => {
   const user = useTracker(() => Meteor.user());
@@ -72,6 +73,7 @@ export const App = () => {
               <div className="user" onClick={logout}>
                 {user.username} 🚪
               </div>
+              <CameraView />
               <TaskForm />
 
               <div className="filter">
